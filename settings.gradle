@@ -1,0 +1,4 @@
+include ':third'
+include ':another'
+include ':app'
+rootProject.name = "RestoreDemo"
