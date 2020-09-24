@@ -13,17 +13,21 @@ import androidx.preference.PreferenceFragmentCompat;
  */
 public class SettingsActivity extends AppCompatActivity {
     SettingsFragment settingsFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity);
         //判断fragment是否为空
-        settingsFragment = (SettingsFragment)getSupportFragmentManager().findFragmentById(R.id.settings);
-        if (null==settingsFragment){settingsFragment = new SettingsFragment();}
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.settings, settingsFragment)
-                .commit();
+        settingsFragment = (SettingsFragment) getSupportFragmentManager().findFragmentById(R.id.settings);
+        if (null == settingsFragment) {
+            settingsFragment = new SettingsFragment();
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.settings, settingsFragment)
+                    .commit();
+        }
+
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
@@ -38,7 +42,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         @Override
         public void onSaveInstanceState(@NonNull Bundle outState) {
-            Log.d(TAG,"onSaveInstanceState");
+            Log.d(TAG, "onSaveInstanceState");
             super.onSaveInstanceState(outState);
         }
 
@@ -49,7 +53,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         @Override
         public void onDestroy() {
-            Log.d(TAG,"onDestroy");
+            Log.d(TAG, "onDestroy");
             super.onDestroy();
         }
     }
