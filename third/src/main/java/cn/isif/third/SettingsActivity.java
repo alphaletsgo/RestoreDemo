@@ -8,12 +8,16 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceFragmentCompat;
 
+/**
+ * 测试fragment恢复
+ */
 public class SettingsActivity extends AppCompatActivity {
     SettingsFragment settingsFragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity);
+        //判断fragment是否为空
         settingsFragment = (SettingsFragment)getSupportFragmentManager().findFragmentById(R.id.settings);
         if (null==settingsFragment){settingsFragment = new SettingsFragment();}
         getSupportFragmentManager()
@@ -26,6 +30,9 @@ public class SettingsActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * SettingFragment
+     */
     public static class SettingsFragment extends PreferenceFragmentCompat {
         final String TAG = "SettingsFragment";
 
