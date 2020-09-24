@@ -8,6 +8,9 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceFragmentCompat;
 
+/**
+ * 测试fragment恢复
+ */
 public class SettingsActivity extends AppCompatActivity {
     SettingsFragment settingsFragment;
     @Override
@@ -26,6 +29,9 @@ public class SettingsActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * SettingFragment
+     */
     public static class SettingsFragment extends PreferenceFragmentCompat {
         final String TAG = "SettingsFragment";
 
